@@ -5,7 +5,7 @@ try:
     con.execute("create table std(roll_no int,name text,age int)")
 except:
     pass
-con.execute("insert into std(roll_no,name,age)values(1,'aslam',21),(2,'muhammed',20)")
+# con.execute("insert into std(roll_no,name,age)values(1,'aslam',21),(2,'muhammed',20)")
 con.commit()
 
 roll_no=int(input('enter the rollno:'))
@@ -14,3 +14,4 @@ age=int(input('enter the age:'))
 
 con.execute("insert into std(roll_no,name,age)values(?,?,?)",(roll_no,name,age))
 con.commit()
+
