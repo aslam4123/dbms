@@ -53,11 +53,21 @@ try:
     con.execute("create table mark(roll_no int,sub text,mark int)")
 except:
     pass
-a=int(input('enter no of students:'))
-for i in range(a):
-    roll_no=i+1
-    name=input('enter the name:')
-    age=int(input('enter the age:'))
-    con.execute("insert into std(roll_no,name,age)values(?,?,?)",(roll_no,name,age))
-    con.commit()
+# a=int(input('enter no of students:'))
+# for i in range(a):
+#     roll_no=i+1
+#     name=input('enter the name:')
+#     age=int(input('enter the age:'))
+#     con.execute("insert into std(roll_no,name,age)values(?,?,?)",(roll_no,name,age))
+#     con.commit()
+# con.execute("insert into mark(roll_no,sub,mark)values(1,'py',60),(2,'java',70),(3,'php',80)")
+# con.commit()
 
+# data=con.execute("select std.roll_no,std.name,std.age,mark.sub,mark.mark from std cross join mark")
+# for i in data:
+#     print(i)
+
+
+data=con.execute("select name,count(age) from std group by name")
+for i in data:
+    print(i)
