@@ -44,3 +44,6 @@ l3=tkinter.Label(win)
 l3.place(x=150,y=120)
 
 win.mainloop()
+
+
+
